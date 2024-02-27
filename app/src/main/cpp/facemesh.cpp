@@ -129,6 +129,7 @@ public:
 
     virtual void on_image(const cv::Mat &rgb) const;
 
+
 private:
     ANativeWindow *win;
 };
@@ -152,6 +153,8 @@ void MyNdkCamera::set_window(ANativeWindow *_win) {
     ANativeWindow_acquire(win);
 }
 
+
+
 void MyNdkCamera::on_image(const cv::Mat &rgb) const {
     // face mesh
     mirror::ImageHead in;
@@ -169,7 +172,7 @@ void MyNdkCamera::on_image(const cv::Mat &rgb) const {
     landmarker->Detect(in, type, objects);
     auto end = std::chrono::high_resolution_clock::now(); // 记录结束时间
     std::chrono::duration<double> elapsed = end - start; // 计算时间差
-    __android_log_print(ANDROID_LOG_INFO, "NdkCamera", "rotate执行时间: %.2f", elapsed.count() * 1000);
+    __android_log_print(ANDROID_LOG_INFO, "NdkCamera", "detection 执行时间: %.2f", elapsed.count() * 1000);
 
 
     for (const auto &object: objects) {
