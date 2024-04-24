@@ -18,7 +18,8 @@ namespace mirror {
         net_->releaseSession(sess_);
     }
 
-    bool FaceDetector::LoadModel(AAssetManager *mgr, const char *model_file) {
+    bool
+    FaceDetector::LoadModel(AAssetManager *mgr, const char *model_file) {
         std::cout << "Start load model." << std::endl;
         // 1.load model
 //  net_ = std::unique_ptr<Interpreter>(Interpreter::createFromFile(model_file));
@@ -44,6 +45,13 @@ namespace mirror {
         ScheduleConfig schedule_config;
         schedule_config.type = MNN_FORWARD_CPU;
         schedule_config.numThread = 4;
+
+        MNN::BackendConfig backendConfig;
+        backendConfig.power = MNN::BackendConfig::Power_High;
+        backendConfig.memory = MNN::BackendConfig::Memory_High;
+        backendConfig.precision = MNN::BackendConfig::Precision_Low;
+
+        schedule_config.backendConfig = &backendConfig;
         sess_ = net_->createSession(schedule_config);
         input_tensor_ = net_->getSessionInput(sess_, nullptr);
 

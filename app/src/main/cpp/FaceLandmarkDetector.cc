@@ -42,6 +42,13 @@ namespace mirror {
         ScheduleConfig schedule_config;
         schedule_config.type = MNN_FORWARD_CPU;
         schedule_config.numThread = 4;
+        MNN::BackendConfig backendConfig;
+        backendConfig.power = MNN::BackendConfig::Power_High;
+        backendConfig.memory = MNN::BackendConfig::Memory_High;
+        backendConfig.precision = MNN::BackendConfig::Precision_Normal;
+
+        schedule_config.backendConfig = &backendConfig;
+//        schedule_config.mode =
         sess_ = net_->createSession(schedule_config);
         input_tensor_ = net_->getSessionInput(sess_, nullptr);
 

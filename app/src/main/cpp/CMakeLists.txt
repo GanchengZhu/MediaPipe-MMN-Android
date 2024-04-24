@@ -64,11 +64,11 @@ set_target_properties(
         libMNN_Vulkan
         libmnncore
         PROPERTIES IMPORTED_LOCATION
-        ${CMAKE_SOURCE_DIR}/mnn/${ANDROID_ABI}/libMNN.so
-        ${CMAKE_SOURCE_DIR}/mnn/${ANDROID_ABI}/libMNN_CL.so
-        ${CMAKE_SOURCE_DIR}/mnn/${ANDROID_ABI}/libMNN_Express.so
-        ${CMAKE_SOURCE_DIR}/mnn/${ANDROID_ABI}/libMNN_Vulkan.so
-        ${CMAKE_SOURCE_DIR}/mnn/${ANDROID_ABI}/libmnncore.so
+        ${CMAKE_SOURCE_DIR}/mnn_2.3.1_android_armv7_armv8_cpu_opencl_vulkan/${ANDROID_ABI}/libMNN.so
+        ${CMAKE_SOURCE_DIR}/mnn_2.3.1_android_armv7_armv8_cpu_opencl_vulkan/${ANDROID_ABI}/libMNN_CL.so
+        ${CMAKE_SOURCE_DIR}/mnn_2.3.1_android_armv7_armv8_cpu_opencl_vulkan/${ANDROID_ABI}/libMNN_Express.so
+        ${CMAKE_SOURCE_DIR}/mnn_2.3.1_android_armv7_armv8_cpu_opencl_vulkan/${ANDROID_ABI}/libMNN_Vulkan.so
+        ${CMAKE_SOURCE_DIR}/mnn_2.3.1_android_armv7_armv8_cpu_opencl_vulkan/${ANDROID_ABI}/libmnncore.so
 )
 
 
