@@ -1,4 +1,4 @@
-# Android MediaPipe MNN Inference
+# Android MediaPipe Facemesh (Facelandmark) MNN Inference
 
 ## 1. Project Description
 - Android test code for MediaPipe model inference using the MNN framework.
@@ -11,7 +11,7 @@
    A community integration of MediaPipe with Alibaba's MNN inference engine for efficient model deployment.
 
 ## Key Features
-- Demonstrates MediaPipe model deployment on the Android platform
+- Demonstrates MediaPipe facelandmark model deployment on the Android platform
 - Integrates MNN inference engine for optimized performance
 - Provides a sample implementation for model inference testing
 
@@ -19,4 +19,4 @@
 - Tested with Android API level 24+ (Nougat and higher)
 - Requires Android NDK for native code compilation
 
-> Note: This project focuses specifically on demonstrating the inference workflow rather than providing full framework implementation.
+> Note: This project focuses specifically on demonstrating the inference workflow rather than providing a full framework implementation.
